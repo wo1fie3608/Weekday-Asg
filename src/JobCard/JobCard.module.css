@@ -1,0 +1,55 @@
+.left-align {
+    text-align: left;
+}
+
+.jobImageContainer {
+    width: 30px;
+}
+
+.jobImage {
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+}
+
+
+.left-align {
+    text-align: left;
+}
+
+
+
+.pad-left-0{
+    padding-left: 0;
+}
+
+.show-more-cta{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    width: 100%;
+}
+.show-more-cta > a{
+    color: #4943da;
+    cursor: pointer;
+}
+
+.about-cmp-text{
+    height: 250px;
+    overflow: hidden;
+    mask-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.about-cmp-wrap{
+    position: relative;
+    margin-top: 0px;
+}
+
+.btn-grp-cta > button {
+    margin-top: 8px;
+    width: 100%;
+}
