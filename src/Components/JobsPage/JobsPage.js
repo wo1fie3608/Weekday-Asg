@@ -13,6 +13,7 @@ const filterTypesMap = {
 
 const JobsPage = () => {
     const [jobs, setJobs] = useState([]);
+    const [filteredJobs, setFilteredJobs] = useState([])
     const [filterDropDownOptions, setFilterDropDownOptions] = useState({
         [filterTypesMap.role]: { options: [], value: '' },
         [filterTypesMap.location]: { options: [], value: '' },
@@ -33,13 +34,30 @@ const JobsPage = () => {
             [filterTypesMap.company]: { options: uniqueCompanies, value: '' }
         }));
     };
+
+    const filterData = () => {
+        const filteredJobs = jobs.filter((job) => {
+            const roleFilter = !filterDropDownOptions[filterTypesMap.role].value || job.role === filterDropDownOptions[filterTypesMap.role].value;
+            const locationFilter = !filterDropDownOptions[filterTypesMap.location].value || job.location === filterDropDownOptions[filterTypesMap.location].value;
+            const companyFilter = !filterDropDownOptions[filterTypesMap.company].value || job.companyName === filterDropDownOptions[filterTypesMap.company].value;
+            const minPayFilter = !filterDropDownOptions[filterTypesMap.minPay].value || job.minSalary >= filterDropDownOptions[filterTypesMap.minPay].value;
+            return roleFilter && locationFilter && companyFilter && minPayFilter;
+        });
+        setFilteredJobs(filteredJobs);
+    };
+    
     
     useEffect(() => {
         fetchJobsData((res) => {
             fetchDataAndUpdateState(res.jobsList);
         });
     }, []);
+
+    useEffect(() => {
+        filterData();
+    },[jobs,filterDropDownOptions])
     
+
     const setFilterValues = (type, value) => {
         setFilterDropDownOptions(prevOptions => ({
             ...prevOptions,
@@ -54,7 +72,7 @@ const JobsPage = () => {
         <div style={{ padding: '20px 40px' }}>
             <Filters setFilterValues={setFilterValues} filterDropDownOptions={filterDropDownOptions}></Filters>
             <Grid container spacing={4} style={{ padding: '20px 0' }}>
-                {jobs.map((item) => (
+                {filteredJobs.map((item) => (
                     <Grid key={item.id} item xs={12} sm={6} md={4}>
                         <JobCard jobDetails={item} />
                     </Grid>
