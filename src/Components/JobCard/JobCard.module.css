@@ -1,3 +1,5 @@
+/* Default styles */
+
 .left-align {
     text-align: left;
 }
@@ -12,18 +14,11 @@
     width: 100%;
 }
 
-
-.left-align {
-    text-align: left;
-}
-
-
-
-.pad-left-0{
+.pad-left-0 {
     padding-left: 0;
 }
 
-.show-more-cta{
+.show-more-cta {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -31,20 +26,23 @@
     background-color: white;
     width: 100%;
 }
-.show-more-cta > a{
+
+.show-more-cta > a {
     color: #4943da;
     cursor: pointer;
 }
 
-.about-cmp-text{
-    height: 250px;
+.about-cmp-text {
+    height: 400px;
     overflow: hidden;
     mask-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0));
     margin-bottom: 0px;
     margin-top: 0px;
+    white-space: pre-wrap;
+    text-align: left;
 }
 
-.about-cmp-wrap{
+.about-cmp-wrap {
     position: relative;
     margin-top: 0px;
 }
