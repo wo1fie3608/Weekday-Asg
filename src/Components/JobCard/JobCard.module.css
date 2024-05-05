@@ -11,7 +11,7 @@
 .jobImage {
     border-radius: 8px;
     height: 100%;
-    width: 100%;
+    width: 80%;
 }
 
 .pad-left-0 {
@@ -33,7 +33,7 @@
 }
 
 .about-cmp-text {
-    height: 400px;
+    height: 250px;
     overflow: hidden;
     mask-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0));
     margin-bottom: 0px;

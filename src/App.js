@@ -3,7 +3,6 @@ import './App.css';
 import JobCard from './Components/JobCard/JobCard';
 import JobsPage from './Components/JobsPage/JobsPage';
 import { fetchJobsData } from './services/networkCalls';
-
 function App() {
 
   return (
