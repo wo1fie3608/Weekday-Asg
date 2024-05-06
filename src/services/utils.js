@@ -10,7 +10,7 @@ export const defaultMin = Number.MIN_SAFE_INTEGER
 
 export const setJobForClient = (job) => {
     job = job || {}
-    const daysSincePosted = job.postedOn ? (Math.ceil((new Date() - new Date(job.postedOn)) / (1000 * 60 * 60 * 24))) : getRandomInt(0,7)
+    const daysSincePosted = 3
     return {
         id: job.jdUid || '',
         companyName: job.companyName || '',
@@ -21,7 +21,7 @@ export const setJobForClient = (job) => {
         logo: job.logoUrl || '',
         maxExperience: job.maxExp || defaultMax, //safe
         minExperience: job.minExp || 0,
-        minSalary: job.minJdSalary || defaultMin,
+        minSalary: job.minJdSalary || 0,
         maxSalary: job.maxJdSalary || defaultMax,
         currency: job.salaryCurrencyCode || 'INR',
         postSince: daysSincePosted === 0 ? "Today":`${daysSincePosted} ${daysSincePosted===1 ? 'day ago': 'days ago'}`
